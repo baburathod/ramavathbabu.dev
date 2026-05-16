@@ -101,16 +101,20 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.6 }}
           className="mt-16 w-full max-w-2xl mx-auto glass rounded-xl text-left border-white/5 overflow-hidden hidden md:block shadow-2xl"
         >
-          <div className="bg-black/40 border-b border-white/5 px-4 py-3 flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-red-500/80" />
-            <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-            <div className="w-3 h-3 rounded-full bg-green-500/80" />
-            <span className="text-xs text-muted-foreground font-mono ml-2">ramavathbabu@macbook-pro ~</span>
+          <div className="bg-[#0c0c0c] border-b border-white/5 px-4 py-3 flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <div className="w-3 h-3 rounded-full bg-white/10" />
+              <span className="text-xs text-muted-foreground font-mono ml-2">Windows PowerShell</span>
+            </div>
+            <div className="flex gap-1.5">
+              <div className="w-3 h-3 rounded-full bg-white/10" />
+              <div className="w-3 h-3 rounded-full bg-white/10" />
+              <div className="w-3 h-3 rounded-full bg-red-500/80" />
+            </div>
           </div>
           <div className="p-6 font-mono text-sm leading-relaxed bg-[#0a0a0a]/80 backdrop-blur-md">
             <div className="flex gap-2 mb-4">
-              <span className="text-secondary">➜</span>
-              <span className="text-primary">~</span>
+              <span className="text-primary">PS C:\Users\ramavathbabu\dev&gt;</span>
               <span className="text-foreground">npm run build</span>
             </div>
             <div className="space-y-2 text-muted-foreground">
