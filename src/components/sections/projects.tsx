@@ -175,21 +175,18 @@ export function Projects() {
                 <div className={`absolute -inset-1 rounded-3xl bg-gradient-to-r ${project.gradient} opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-700 -z-10`} />
                 
                 <div className={`glass rounded-3xl border ${project.border} overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10`}>
-                  
-                  <div className="grid lg:grid-cols-2 gap-0">
+                  <div className="grid lg:grid-cols-12 gap-0">
                     
-                    {/* Left Side: Content Area */}
-                    <div className="p-8 md:p-10 lg:p-12 flex flex-col justify-center order-2 lg:order-1">
-                      <div className="flex justify-between items-start mb-8">
-                        <div>
-                          <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20 backdrop-blur-md px-3 py-1 font-mono text-xs mb-4">
-                            {project.badge}
-                          </Badge>
-                          <h3 className="font-heading text-3xl sm:text-4xl font-bold text-foreground group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-white/50 transition-all duration-300">
-                            {project.title}
-                          </h3>
-                        </div>
-                        <div className="flex gap-2 shrink-0">
+                    {/* Left Side: Title & Tech */}
+                    <div className="lg:col-span-5 relative overflow-hidden bg-background/50 border-b lg:border-b-0 lg:border-r border-white/5 p-8 flex flex-col justify-between min-h-[300px] lg:min-h-full">
+                      <div className="absolute inset-0 bg-grid opacity-10" />
+                      <div className="absolute inset-0 bg-gradient-to-br from-transparent to-background/80" />
+                      
+                      <div className="relative z-10 flex justify-between items-start mb-12">
+                        <Badge variant="secondary" className="bg-white/10 hover:bg-white/20 text-foreground border-white/10 backdrop-blur-md px-4 py-1.5 font-mono text-xs">
+                          {project.badge}
+                        </Badge>
+                        <div className="flex gap-2">
                           <a href={project.github} target="_blank" rel="noopener noreferrer" className="p-2.5 rounded-full glass hover:bg-white/10 transition-colors text-muted-foreground hover:text-foreground">
                             <Github className="w-4 h-4" />
                           </a>
@@ -201,25 +198,35 @@ export function Projects() {
                         </div>
                       </div>
 
-                      <div className="flex flex-wrap gap-2 mb-8">
-                        {project.tech.map((tech, tIdx) => (
-                          <span key={tIdx} className="font-mono text-xs text-muted-foreground bg-white/5 px-2 py-1 rounded border border-white/5">
-                            {tech}
-                          </span>
-                        ))}
+                      <div className="relative z-10">
+                        <h3 className="font-heading text-4xl font-bold text-foreground mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-white/50 transition-all duration-300">
+                          {project.title}
+                        </h3>
+                        <div className="flex flex-wrap gap-2">
+                          {project.tech.map((tech, tIdx) => (
+                            <span key={tIdx} className="font-mono text-xs text-primary/80 bg-primary/5 px-2 py-1 rounded border border-primary/10">
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
                       </div>
+                    </div>
 
+                    {/* Right Side: Overview & Features */}
+                    <div className="lg:col-span-7 p-8 md:p-10 lg:p-12 flex flex-col justify-center">
                       <div className="mb-8">
-                        <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
+                        <h4 className="font-mono text-sm text-accent mb-3 tracking-wider uppercase">Overview</h4>
+                        <p className="text-lg text-muted-foreground leading-relaxed">
                           {project.description}
                         </p>
                       </div>
 
                       <div className="mb-8">
+                        <h4 className="font-mono text-sm text-accent mb-4 tracking-wider uppercase">Key Features</h4>
                         <div className="grid sm:grid-cols-2 gap-4">
                           {project.highlights.map((item, hIdx) => (
                             <div key={hIdx} className="flex items-start gap-3 text-muted-foreground group/item hover:text-foreground transition-colors">
-                              <div className="mt-1 p-1.5 rounded-md bg-white/5 border border-white/5 group-hover/item:border-primary/30 transition-colors shrink-0">
+                              <div className="mt-1 p-1.5 rounded-md bg-white/5 border border-white/5 group-hover/item:border-primary/30 transition-colors">
                                 <item.icon className="w-3.5 h-3.5 text-primary" />
                               </div>
                               <span className="text-sm leading-tight mt-1">{item.text}</span>
@@ -228,7 +235,12 @@ export function Projects() {
                         </div>
                       </div>
 
-                      <div className="mt-4 flex flex-col sm:flex-row items-center gap-4 w-full">
+                      <div className="p-5 rounded-xl bg-background/50 border border-white/5 font-mono text-sm text-muted-foreground/80 leading-relaxed border-l-2 border-l-primary/50">
+                        <strong className="text-foreground block mb-2 font-sans">Architecture Insight:</strong>
+                        {project.architecture}
+                      </div>
+                      
+                      <div className="mt-8 flex flex-col sm:flex-row items-center gap-4 w-full">
                          <Button asChild variant="outline" className="w-full sm:w-auto gap-2 glass hover:bg-white/5 font-mono rounded-full px-8">
                            <a href={`/projects/${project.slug}`}>
                              View Details <ArrowRight className="w-4 h-4" />
@@ -243,30 +255,6 @@ export function Projects() {
                            </Button>
                          )}
                       </div>
-                    </div>
-
-                    {/* Right Side: Image Area */}
-                    <div className="relative bg-[#0a0a0a] border-b lg:border-b-0 lg:border-l border-white/5 min-h-[250px] sm:min-h-[350px] lg:min-h-full flex items-center justify-center p-6 md:p-8 order-1 lg:order-2 group/img">
-                      <div className="absolute inset-0 bg-grid opacity-20 z-0" />
-                      <div className="absolute inset-0 bg-gradient-to-tr from-background/40 to-transparent z-0" />
-                      
-                      {'image' in project && project.image ? (
-                        <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl z-10 border border-white/10 group-hover/img:scale-105 transition-transform duration-700 bg-black/60">
-                          <Image
-                            src={project.image}
-                            alt={`${project.title} preview`}
-                            fill
-                            className="object-contain p-2"
-                            sizes="(max-width: 1024px) 100vw, 50vw"
-                            priority={idx === 0}
-                          />
-                        </div>
-                      ) : (
-                        <div className="relative z-10 text-muted-foreground/30 flex flex-col items-center">
-                          <Layers className="w-16 h-16 mb-4" />
-                          <span className="font-mono text-sm uppercase tracking-widest">No Image</span>
-                        </div>
-                      )}
                     </div>
 
                   </div>
