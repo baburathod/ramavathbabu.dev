@@ -36,7 +36,8 @@ const projectsData = {
     github: "https://github.com/baburathod/task-manager",
     live: "#",
     architecture: "Built with Node.js and Express, heavily utilizing Mongoose for data modeling and validation. The entire application is containerized using Docker for consistent deployment.",
-    challenges: "Writing complex MongoDB aggregation pipelines for the advanced filtering and sorting mechanisms."
+    challenges: "Writing complex MongoDB aggregation pipelines for the advanced filtering and sorting mechanisms.",
+    image: "/projects/task-manager.jpg"
   },
   "road-sos": {
     name: "RoadSoS",
