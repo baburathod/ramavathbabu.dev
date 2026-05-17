@@ -173,15 +173,30 @@ export function Projects() {
               >
                 <div className={`absolute -inset-1 rounded-3xl bg-gradient-to-r ${project.gradient} opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-700 -z-10`} />
                 
-                <div className={`glass rounded-3xl border ${project.border} overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10`}>
-                  <div className="grid lg:grid-cols-12 gap-0">
+                <div className={`glass rounded-3xl border ${project.border} overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 flex flex-col`}>
+                  
+                  {/* Cinematic Image Banner */}
+                  {'image' in project && project.image && (
+                    <div className="w-full relative h-[250px] sm:h-[350px] lg:h-[450px] bg-[#080808] border-b border-white/5 overflow-hidden group/img">
+                      <div className="absolute inset-0 bg-grid opacity-20 z-0" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-background/20 z-10" />
+                      <Image
+                        src={project.image}
+                        alt={`${project.title} preview`}
+                        fill
+                        className="object-contain p-4 md:p-8 z-0 group-hover/img:scale-[1.02] transition-transform duration-700"
+                        sizes="100vw"
+                        priority={idx === 0}
+                      />
+                    </div>
+                  )}
+
+                  {/* Two-Column Content Area */}
+                  <div className="grid lg:grid-cols-12 gap-0 relative z-20">
                     
-                    {/* Visual / Thumbnail Side */}
-                    <div className="lg:col-span-5 relative overflow-hidden bg-background/50 border-b lg:border-b-0 lg:border-r border-white/5 p-8 flex flex-col justify-between min-h-[300px] lg:min-h-full">
-                      <div className="absolute inset-0 bg-grid opacity-10" />
-                      <div className="absolute inset-0 bg-gradient-to-br from-transparent to-background/80" />
-                      
-                      <div className="relative z-10 flex justify-between items-start mb-12">
+                    {/* Left Side: Title & Tech */}
+                    <div className="lg:col-span-4 bg-background/50 border-b lg:border-b-0 lg:border-r border-white/5 p-8 flex flex-col justify-center">
+                      <div className="flex justify-between items-start mb-12">
                         <Badge variant="secondary" className="bg-white/10 hover:bg-white/20 text-foreground border-white/10 backdrop-blur-md px-4 py-1.5 font-mono text-xs">
                           {project.badge}
                         </Badge>
@@ -197,7 +212,7 @@ export function Projects() {
                         </div>
                       </div>
 
-                      <div className="relative z-10">
+                      <div>
                         <h3 className="font-heading text-4xl font-bold text-foreground mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-white/50 transition-all duration-300">
                           {project.title}
                         </h3>
@@ -211,8 +226,8 @@ export function Projects() {
                       </div>
                     </div>
 
-                    {/* Content Side */}
-                    <div className="lg:col-span-7 p-8 md:p-10 lg:p-12 flex flex-col justify-center">
+                    {/* Right Side: Overview & Features */}
+                    <div className="lg:col-span-8 p-8 md:p-10 lg:p-12 flex flex-col justify-center">
                       <div className="mb-8">
                         <h4 className="font-mono text-sm text-accent mb-3 tracking-wider uppercase">Overview</h4>
                         <p className="text-lg text-muted-foreground leading-relaxed">
