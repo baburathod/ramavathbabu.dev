@@ -27,8 +27,7 @@ const projects = [
     github: "https://github.com/baburathod/SmartATS",
     live: "https://smart-ats-two.vercel.app",
     gradient: "from-primary/20 via-accent/10 to-transparent",
-    border: "border-primary/30",
-    image: "/projects/smartats.jpg"
+    border: "border-primary/30"
   },
   {
     title: "RoadSoS",
@@ -47,8 +46,7 @@ const projects = [
     github: "https://github.com/baburathod/RoadSoS-AI-Emergency-Services-Finder",
     live: "#",
     gradient: "from-secondary/20 via-primary/10 to-transparent",
-    border: "border-secondary/30",
-    image: "/projects/road-sos.jpg"
+    border: "border-secondary/30"
   },
   {
     title: "ArogyaAI",
@@ -67,8 +65,7 @@ const projects = [
     github: "https://github.com/baburathod/ArogyaAI",
     live: "https://baburathod.github.io/ArogyaAI",
     gradient: "from-accent/20 via-secondary/10 to-transparent",
-    border: "border-accent/30",
-    image: "/projects/arogya-ai.jpg"
+    border: "border-accent/30"
   },
   {
     title: "MERN Auth System",
@@ -87,8 +84,7 @@ const projects = [
     github: "https://github.com/baburathod/mern-stack-internship-project",
     live: "#",
     gradient: "from-primary/20 via-secondary/10 to-transparent",
-    border: "border-primary/30",
-    image: "/projects/mern-auth.jpg"
+    border: "border-primary/30"
   },
   {
     title: "Task Manager",
@@ -107,8 +103,7 @@ const projects = [
     github: "https://github.com/baburathod/task-manager",
     live: "#",
     gradient: "from-secondary/20 via-accent/10 to-transparent",
-    border: "border-secondary/30",
-    image: "/projects/task-manager.jpg"
+    border: "border-secondary/30"
   }
 ];
 
