@@ -7,7 +7,7 @@ export function Footer() {
         <div className="grid md:grid-cols-3 gap-8 items-center">
           <div className="text-center md:text-left">
             <a href="#" className="text-2xl font-heading font-bold tracking-tighter">
-              Ramavath <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent to-primary">Babu.</span>
+              Ramavath <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent to-primary">Babu</span>
             </a>
             <p className="mt-2 font-mono text-xs text-muted-foreground">
               MERN Full Stack Developer
