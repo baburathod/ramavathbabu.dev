@@ -181,16 +181,6 @@ export function Projects() {
                         <Badge variant="secondary" className="bg-white/10 hover:bg-white/20 text-foreground border-white/10 backdrop-blur-md px-4 py-1.5 font-mono text-xs">
                           {project.badge}
                         </Badge>
-                        <div className="flex gap-2">
-                          <a href={project.github} target="_blank" rel="noopener noreferrer" className="p-2.5 rounded-full glass hover:bg-white/10 transition-colors text-muted-foreground hover:text-foreground">
-                            <Github className="w-4 h-4" />
-                          </a>
-                          {project.live !== "#" && (
-                            <a href={project.live} target="_blank" rel="noopener noreferrer" className="p-2.5 rounded-full bg-primary/20 hover:bg-primary/30 border border-primary/30 transition-colors text-primary">
-                              <ExternalLink className="w-4 h-4" />
-                            </a>
-                          )}
-                        </div>
                       </div>
 
                       <div className="relative z-10">
@@ -235,10 +225,16 @@ export function Projects() {
                         {project.architecture}
                       </div>
                       
-                      <div className="mt-8 flex flex-col sm:flex-row items-center gap-4 w-full">
+                      <div className="mt-8 flex flex-col sm:flex-row flex-wrap items-center gap-4 w-full">
                          <Button asChild variant="outline" className="w-full sm:w-auto gap-2 glass hover:bg-white/5 font-mono rounded-full px-8">
                            <a href={`/projects/${project.slug}`}>
                              View Details <ArrowRight className="w-4 h-4" />
+                           </a>
+                         </Button>
+
+                         <Button asChild variant="outline" className="w-full sm:w-auto gap-2 glass hover:bg-white/5 font-mono rounded-full px-8">
+                           <a href={project.github} target="_blank" rel="noopener noreferrer">
+                             <Github className="w-4 h-4" /> Source Code
                            </a>
                          </Button>
                          
