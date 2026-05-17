@@ -179,7 +179,7 @@ export function Projects() {
                     {/* Visual / Thumbnail Side */}
                     <div className="lg:col-span-5 relative overflow-hidden bg-background/50 border-b lg:border-b-0 lg:border-r border-white/5 p-8 flex flex-col justify-between min-h-[300px] lg:min-h-full">
                       {'image' in project && project.image && (
-                        <div className="absolute inset-0 z-0 opacity-20 group-hover:opacity-40 transition-opacity duration-500">
+                        <div className="absolute inset-0 z-0 opacity-50 group-hover:opacity-80 transition-opacity duration-500">
                           <Image
                             src={project.image}
                             alt={`${project.title} background`}
@@ -189,8 +189,8 @@ export function Projects() {
                           />
                         </div>
                       )}
-                      <div className="absolute inset-0 bg-grid opacity-10 z-0" />
-                      <div className="absolute inset-0 bg-gradient-to-br from-background/40 via-background/80 to-background z-0" />
+                      <div className="absolute inset-0 bg-grid opacity-20 z-0" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/20 z-0" />
                       
                       <div className="relative z-10 flex justify-between items-start mb-12">
                         <Badge variant="secondary" className="bg-white/10 hover:bg-white/20 text-foreground border-white/10 backdrop-blur-md px-4 py-1.5 font-mono text-xs">
