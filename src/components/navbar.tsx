@@ -39,7 +39,7 @@ export function Navbar() {
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <a href="#" className="text-2xl font-heading font-bold tracking-tighter">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-secondary">
-            RB.
+            RB
           </span>
         </a>
 
