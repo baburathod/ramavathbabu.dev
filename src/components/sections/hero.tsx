@@ -31,7 +31,7 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-6"
         >
-          Ramavath <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent to-primary">Babu.</span>
+          Ramavath <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent to-primary">Babu</span>
         </motion.h1>
 
         <motion.p
