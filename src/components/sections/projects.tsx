@@ -234,15 +234,15 @@ export function Projects() {
                         {project.architecture}
                       </div>
                       
-                      <div className="mt-8 flex items-center gap-4">
-                         <Button asChild variant="outline" className="gap-2 glass hover:bg-white/5 font-mono rounded-full px-8">
+                      <div className="mt-8 flex flex-col sm:flex-row items-center gap-4 w-full">
+                         <Button asChild variant="outline" className="w-full sm:w-auto gap-2 glass hover:bg-white/5 font-mono rounded-full px-8">
                            <a href={`/projects/${project.slug}`}>
                              View Details <ArrowRight className="w-4 h-4" />
                            </a>
                          </Button>
                          
                          {project.live !== "#" && (
-                           <Button asChild className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90 font-mono rounded-full px-8">
+                           <Button asChild className="w-full sm:w-auto gap-2 bg-primary text-primary-foreground hover:bg-primary/90 font-mono rounded-full px-8">
                              <a href={project.live} target="_blank" rel="noopener noreferrer">
                                <Play className="w-4 h-4 fill-current" /> Live Demo
                              </a>

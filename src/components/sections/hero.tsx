@@ -99,31 +99,31 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
-          className="mt-16 w-full max-w-2xl mx-auto glass rounded-xl text-left border-white/5 overflow-hidden hidden md:block shadow-2xl"
+          className="mt-12 md:mt-16 w-full max-w-2xl mx-auto glass rounded-xl text-left border-white/5 overflow-hidden shadow-2xl"
         >
-          <div className="bg-[#0c0c0c] border-b border-white/5 px-4 py-3 flex items-center justify-between">
+          <div className="bg-[#0c0c0c] border-b border-white/5 px-3 py-2 md:px-4 md:py-3 flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-white/10" />
-              <span className="text-xs text-muted-foreground font-mono ml-2">Windows PowerShell</span>
+              <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-white/10" />
+              <span className="text-[10px] md:text-xs text-muted-foreground font-mono ml-1 md:ml-2">Windows PowerShell</span>
             </div>
             <div className="flex gap-1.5">
-              <div className="w-3 h-3 rounded-full bg-white/10" />
-              <div className="w-3 h-3 rounded-full bg-white/10" />
-              <div className="w-3 h-3 rounded-full bg-red-500/80" />
+              <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-white/10" />
+              <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-white/10" />
+              <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-red-500/80" />
             </div>
           </div>
-          <div className="p-6 font-mono text-sm leading-relaxed bg-[#0a0a0a]/80 backdrop-blur-md">
-            <div className="flex gap-2 mb-4">
-              <span className="text-primary">PS C:\Users\ramavathbabu\dev&gt;</span>
-              <span className="text-foreground">npm run build</span>
+          <div className="p-4 md:p-6 font-mono text-xs md:text-sm leading-relaxed md:leading-relaxed bg-[#0a0a0a]/80 backdrop-blur-md">
+            <div className="flex items-start md:items-center gap-2 mb-4">
+              <span className="text-primary mt-0.5 md:mt-0 shrink-0">PS C:\&gt;</span>
+              <span className="text-foreground break-all">npm run build</span>
             </div>
-            <div className="space-y-2 text-muted-foreground">
-              <div className="flex items-center gap-3"><span className="text-accent">✔</span> MERN full-stack applications</div>
-              <div className="flex items-center gap-3"><span className="text-accent">✔</span> REST APIs</div>
-              <div className="flex items-center gap-3"><span className="text-accent">✔</span> JWT authentication</div>
-              <div className="flex items-center gap-3"><span className="text-accent">✔</span> MongoDB integrations</div>
-              <div className="flex items-center gap-3"><span className="text-accent">✔</span> Production-ready React UIs</div>
-              <div className="flex items-center gap-3 mt-4 text-green-400">✨ Build successful in 2.4s</div>
+            <div className="space-y-3 text-muted-foreground">
+              <div className="flex items-start gap-3"><span className="text-accent mt-0.5 shrink-0">✔</span> <span className="break-words">MERN full-stack applications</span></div>
+              <div className="flex items-start gap-3"><span className="text-accent mt-0.5 shrink-0">✔</span> <span className="break-words">REST APIs</span></div>
+              <div className="flex items-start gap-3"><span className="text-accent mt-0.5 shrink-0">✔</span> <span className="break-words">JWT authentication</span></div>
+              <div className="flex items-start gap-3"><span className="text-accent mt-0.5 shrink-0">✔</span> <span className="break-words">MongoDB integrations</span></div>
+              <div className="flex items-start gap-3"><span className="text-accent mt-0.5 shrink-0">✔</span> <span className="break-words">Production-ready React UIs</span></div>
+              <div className="flex items-start gap-3 mt-5 text-green-400"><span className="mt-0.5 shrink-0">✨</span> <span className="break-words">Build successful in 2.4s</span></div>
             </div>
           </div>
         </motion.div>
