@@ -177,43 +177,16 @@ export function Projects() {
                   <div className="grid lg:grid-cols-12 gap-0">
                     
                     {/* Visual / Thumbnail Side */}
-                    <div className="lg:col-span-5 relative overflow-hidden bg-black/40 border-b lg:border-b-0 lg:border-r border-white/5 flex flex-col items-center justify-center p-6 sm:p-8 min-h-[250px] lg:min-h-full group/image">
-                      <div className="absolute inset-0 bg-grid opacity-20 z-0" />
-                      <div className="absolute inset-0 bg-gradient-to-br from-background/40 to-background z-0" />
+                    <div className="lg:col-span-5 relative overflow-hidden bg-background/50 border-b lg:border-b-0 lg:border-r border-white/5 p-8 flex flex-col justify-between min-h-[300px] lg:min-h-full">
+                      <div className="absolute inset-0 bg-grid opacity-10" />
+                      <div className="absolute inset-0 bg-gradient-to-br from-transparent to-background/80" />
                       
-                      {'image' in project && project.image ? (
-                        <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-white/10 shadow-2xl z-10 bg-[#0a0a0a] group-hover/image:scale-[1.02] transition-transform duration-500">
-                          <Image
-                            src={project.image}
-                            alt={`${project.title} preview`}
-                            fill
-                            className="object-contain p-1"
-                            sizes="(max-width: 1024px) 100vw, 50vw"
-                          />
-                        </div>
-                      ) : (
-                        <div className="relative z-10 text-muted-foreground/30 flex flex-col items-center">
-                          <Layers className="w-16 h-16 mb-4" />
-                          <span className="font-mono text-sm uppercase tracking-widest">No Image</span>
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Content Side */}
-                    <div className="lg:col-span-7 p-6 sm:p-8 md:p-10 flex flex-col justify-center">
-                      
-                      {/* Header Region */}
-                      <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-6">
-                        <div>
-                          <Badge variant="secondary" className="bg-primary/10 hover:bg-primary/20 text-primary border-primary/20 backdrop-blur-md px-3 py-1 font-mono text-xs mb-4">
-                            {project.badge}
-                          </Badge>
-                          <h3 className="font-heading text-3xl sm:text-4xl font-bold text-foreground group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-white/50 transition-all duration-300">
-                            {project.title}
-                          </h3>
-                        </div>
-                        <div className="flex gap-2 shrink-0">
-                          <a href={project.github} target="_blank" rel="noopener noreferrer" className="p-2.5 rounded-full glass hover:bg-white/10 transition-colors text-muted-foreground hover:text-foreground border border-white/10">
+                      <div className="relative z-10 flex justify-between items-start mb-12">
+                        <Badge variant="secondary" className="bg-white/10 hover:bg-white/20 text-foreground border-white/10 backdrop-blur-md px-4 py-1.5 font-mono text-xs">
+                          {project.badge}
+                        </Badge>
+                        <div className="flex gap-2">
+                          <a href={project.github} target="_blank" rel="noopener noreferrer" className="p-2.5 rounded-full glass hover:bg-white/10 transition-colors text-muted-foreground hover:text-foreground">
                             <Github className="w-4 h-4" />
                           </a>
                           {project.live !== "#" && (
@@ -224,17 +197,25 @@ export function Projects() {
                         </div>
                       </div>
 
-                      <div className="flex flex-wrap gap-2 mb-8">
-                        {project.tech.map((tech, tIdx) => (
-                          <span key={tIdx} className="font-mono text-xs text-muted-foreground bg-white/5 px-2 py-1 rounded border border-white/5">
-                            {tech}
-                          </span>
-                        ))}
+                      <div className="relative z-10">
+                        <h3 className="font-heading text-4xl font-bold text-foreground mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-white/50 transition-all duration-300">
+                          {project.title}
+                        </h3>
+                        <div className="flex flex-wrap gap-2">
+                          {project.tech.map((tech, tIdx) => (
+                            <span key={tIdx} className="font-mono text-xs text-primary/80 bg-primary/5 px-2 py-1 rounded border border-primary/10">
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
                       </div>
+                    </div>
 
+                    {/* Content Side */}
+                    <div className="lg:col-span-7 p-8 md:p-10 lg:p-12 flex flex-col justify-center">
                       <div className="mb-8">
                         <h4 className="font-mono text-sm text-accent mb-3 tracking-wider uppercase">Overview</h4>
-                        <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
+                        <p className="text-lg text-muted-foreground leading-relaxed">
                           {project.description}
                         </p>
                       </div>
@@ -244,7 +225,7 @@ export function Projects() {
                         <div className="grid sm:grid-cols-2 gap-4">
                           {project.highlights.map((item, hIdx) => (
                             <div key={hIdx} className="flex items-start gap-3 text-muted-foreground group/item hover:text-foreground transition-colors">
-                              <div className="mt-1 p-1.5 rounded-md bg-white/5 border border-white/5 group-hover/item:border-primary/30 transition-colors shrink-0">
+                              <div className="mt-1 p-1.5 rounded-md bg-white/5 border border-white/5 group-hover/item:border-primary/30 transition-colors">
                                 <item.icon className="w-3.5 h-3.5 text-primary" />
                               </div>
                               <span className="text-sm leading-tight mt-1">{item.text}</span>
