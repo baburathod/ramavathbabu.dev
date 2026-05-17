@@ -34,7 +34,7 @@ export function Footer() {
         </div>
         
         <div className="mt-8 pt-8 border-t border-white/5 text-center flex flex-col md:flex-row items-center justify-between gap-4 font-mono text-xs text-muted-foreground/50">
-          <p>© {new Date().getFullYear()} Ramavath Babu All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Ramavath Babu. All rights reserved.</p>
           <p>Built with Next.js & Tailwind CSS.</p>
         </div>
       </div>
