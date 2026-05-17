@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Github, ExternalLink, ArrowRight, Layers, LayoutTemplate, ShieldCheck, Cpu, Play } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -26,7 +27,8 @@ const projects = [
     github: "https://github.com/baburathod/SmartATS",
     live: "https://smart-ats-two.vercel.app",
     gradient: "from-primary/20 via-accent/10 to-transparent",
-    border: "border-primary/30"
+    border: "border-primary/30",
+    image: "/projects/smartats.jpg"
   },
   {
     title: "RoadSoS",
@@ -45,7 +47,8 @@ const projects = [
     github: "https://github.com/baburathod/RoadSoS-AI-Emergency-Services-Finder",
     live: "#",
     gradient: "from-secondary/20 via-primary/10 to-transparent",
-    border: "border-secondary/30"
+    border: "border-secondary/30",
+    image: "/projects/road-sos.jpg"
   },
   {
     title: "ArogyaAI",
@@ -64,7 +67,8 @@ const projects = [
     github: "https://github.com/baburathod/ArogyaAI",
     live: "https://baburathod.github.io/ArogyaAI",
     gradient: "from-accent/20 via-secondary/10 to-transparent",
-    border: "border-accent/30"
+    border: "border-accent/30",
+    image: "/projects/arogya-ai.jpg"
   },
   {
     title: "MERN Auth System",
@@ -83,7 +87,8 @@ const projects = [
     github: "https://github.com/baburathod/mern-stack-internship-project",
     live: "#",
     gradient: "from-primary/20 via-secondary/10 to-transparent",
-    border: "border-primary/30"
+    border: "border-primary/30",
+    image: "/projects/mern-auth.jpg"
   },
   {
     title: "Task Manager",
@@ -173,8 +178,19 @@ export function Projects() {
                     
                     {/* Visual / Thumbnail Side */}
                     <div className="lg:col-span-5 relative overflow-hidden bg-background/50 border-b lg:border-b-0 lg:border-r border-white/5 p-8 flex flex-col justify-between min-h-[300px] lg:min-h-full">
-                      <div className="absolute inset-0 bg-grid opacity-10" />
-                      <div className="absolute inset-0 bg-gradient-to-br from-transparent to-background/80" />
+                      {'image' in project && project.image && (
+                        <div className="absolute inset-0 z-0 opacity-20 group-hover:opacity-40 transition-opacity duration-500">
+                          <Image
+                            src={project.image}
+                            alt={`${project.title} background`}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 1024px) 100vw, 50vw"
+                          />
+                        </div>
+                      )}
+                      <div className="absolute inset-0 bg-grid opacity-10 z-0" />
+                      <div className="absolute inset-0 bg-gradient-to-br from-background/40 via-background/80 to-background z-0" />
                       
                       <div className="relative z-10 flex justify-between items-start mb-12">
                         <Badge variant="secondary" className="bg-white/10 hover:bg-white/20 text-foreground border-white/10 backdrop-blur-md px-4 py-1.5 font-mono text-xs">
@@ -193,12 +209,12 @@ export function Projects() {
                       </div>
 
                       <div className="relative z-10">
-                        <h3 className="font-heading text-4xl font-bold text-foreground mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-white/50 transition-all duration-300">
+                        <h3 className="font-heading text-4xl font-bold text-foreground mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-white/50 transition-all duration-300 drop-shadow-md">
                           {project.title}
                         </h3>
                         <div className="flex flex-wrap gap-2">
                           {project.tech.map((tech, tIdx) => (
-                            <span key={tIdx} className="font-mono text-xs text-primary/80 bg-primary/5 px-2 py-1 rounded border border-primary/10">
+                            <span key={tIdx} className="font-mono text-xs text-primary/80 bg-background/80 backdrop-blur-sm px-2 py-1 rounded border border-primary/10">
                               {tech}
                             </span>
                           ))}
